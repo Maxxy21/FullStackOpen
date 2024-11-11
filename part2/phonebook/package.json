@@ -7,9 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server -p3001 --watch db.json",
+    "build:ui": "@powershell Remove-Item -Recurse -Force dist; cd ../../part2/phonebook; npm run build; Copy-Item -Recurse dist ../../part3/exercise3",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "fly logs"
   },
   "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

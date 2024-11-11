@@ -9,7 +9,8 @@
     "build:ui": "@powershell Remove-Item -Recurse -Force dist; cd ../../part2/exercises; npm run build; Copy-Item -Recurse dist ../../part3/exercise3",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
   },
   "author": "Maxwell Aboagye",
   "license": "MIT",
@@ -23,7 +24,10 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.14.0",
     "@flydotio/dockerfile": "^0.5.9",
+    "@stylistic/eslint-plugin-js": "^2.10.1",
+    "eslint": "^9.14.0",
     "nodemon": "^3.1.7"
   }
 }

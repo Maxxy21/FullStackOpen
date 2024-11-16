@@ -1,19 +1,14 @@
 {
-  "name": "backend",
+  "name": "exercises",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "test": "cross-env  NODE_ENV=test node --test",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist; cd ../../part2/exercises; npm run build; Copy-Item -Recurse dist ../../part3/backend",
-    "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs",
-    "lint": "eslint ."
+    "test": "cross-env  NODE_ENV=test node --test"
   },
   "author": "Maxwell Aboagye",
-  "license": "MIT",
+  "license": "ISC",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
